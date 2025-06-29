@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Blog Details | Sherwood Park Cabs | Latest News & Updates</title>
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap Icons - Free, reliable, modern icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Font Awesome Light Icons Alternative -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/light.min.css">
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+    <style>
+        /* Ensure all icons display properly */
+        .fas:before, .fab:before, .fa:before {
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 900;
+        }
+        
+        /* Fix navigation menu layout */
+        .main-menu .navigation {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        
+        .main-menu .navigation > li > a {
+            font-size: 16px;
+            font-weight: 600;
+            padding: 8px 0;
+            letter-spacing: 0.5px;
+        }
+        
+        .main-menu .navigation > li {
+            margin-right: 18px;
+            white-space: nowrap;
+        }
+        
+        .main-menu .navigation > li:last-child {
+            margin-right: 0;
+        }
+        
+        @media (max-width: 1200px) {
+            .main-menu .navigation > li {
+                margin-right: 15px;
+            }
+            .main-menu .navigation > li > a {
+                font-size: 15px;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .main-menu .navigation > li {
+                margin-right: 12px;
+            }
+            .main-menu .navigation > li > a {
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .main-menu .navigation > li {
+                margin-right: 10px;
+            }
+            .main-menu .navigation > li > a {
+                font-size: 14px;
+            }
+        }
+
+        /* Enhanced footer styling */
+        .main-footer {
+            position: relative;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            overflow: hidden;
+        }
+        
+        .main-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .main-footer .footer-top {
+            padding: 40px 0 30px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .main-footer .widgets-section {
+            padding: 40px 0 30px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .main-footer .footer-bottom {
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Fix contact info visibility */
+        .main-footer .contact-info .info-item {
+            color: #ffffff !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .main-footer .contact-info .info-item a {
+            color: #ffffff !important;
+            text-decoration: none;
+        }
+        
+        .main-footer .contact-info .info-item a:hover {
+            color: #ffd700 !important;
+        }
+        
+        .main-footer .contact-info .info-item i {
+            color: #ffd700 !important;
+        }
+        
+        /* Widget titles styling */
+        .main-footer .footer-widget h4,
+        .main-footer .footer-widget h5 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .main-footer .footer-widget h4:after,
+        .main-footer .footer-widget h5:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, #ffd700, #ff6b35);
+            border-radius: 2px;
+        }
+        
+        /* Text styling */
+        .main-footer .widget-content .text {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        /* Service features styling */
+        .main-footer .service-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .main-footer .service-features ul li {
+            color: #cccccc;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .main-footer .service-features ul li i {
+            color: #ffd700;
+            margin-right: 10px;
+            width: 16px;
+            text-align: center;
+        }
+        
+        /* Links styling */
+        .main-footer .user-links li a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .main-footer .user-links li i {
+            color: #ffd700;
+            margin-right: 8px;
+        }
+        
+        /* Footer navigation */
+        .main-footer .footer-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .main-footer .footer-nav li a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .main-footer .footer-nav li a:hover {
+            color: #ffd700;
+        }
+        
+        .main-footer .footer-nav li a i {
+            margin-right: 5px;
+        }
+        
+        /* Copyright text */
+        .main-footer .copyright-text {
+            color: #cccccc;
+            font-size: 14px;
+            text-align: center;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-footer .footer-top {
+                padding: 30px 0 20px;
+            }
+            
+            .main-footer .widgets-section {
+                padding: 30px 0 20px;
+            }
+            
+            .main-footer .footer-nav {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <div class="preloader"></div>
+
+        <!-- Main Header-->
+        <header class="main-header header-style-one">
+            <!-- Header Top -->
+            <div class="header-top">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <div class="top-left">
+                            <!-- Info List -->
+                            <ul class="list-style-one">
+                                <li><i class="fas fa-mobile-alt"></i> <a href="tel:+17804694222">+1 (780) 469-4222</a></li>
+                                <li><i class="fas fa-envelope"></i> <a href="mailto:info@sherwoodparkcabs.ca">info@sherwoodparkcabs.ca</a></li>
+                            </ul>
+                        </div>
+                        <div class="top-right">
+                            <ul class="social-icon-one">
+                                <li><a href="https://www.facebook.com/www.sherwoodparkcabs.ca/"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="https://x.com/sherwoodtaxi"><i class="fa fa-x"></i></a></li>
+                                <li><a href="https://www.instagram.com/sherwoodparkcabs/"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://wa.me/17804694222" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header Top -->
+            <div class="header-lower">
+                <div class="auto-container">
+                    <!-- Main box -->
+                    <div class="main-box">
+                        <div class="logo-box">
+                            <div class="logo"><a href="index.html"><img src="images/logo-2.png" alt="Sherwood Park Cabs Logo"></a></div>
+                        </div>
+
+                        <!--Nav Box-->
+                        <div class="nav-outer">
+                            <nav class="nav main-menu">
+                                <ul class="navigation">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="page-about.html">About</a></li>
+                                    <li><a href="page-services.html">Services</a></li>
+                                    <li><a href="page-pricing.html">Pricing</a></li>
+                                    <li><a href="page-testimonial.html">Gallery</a></li>
+                                    <li class="current"><a href="news-grid.html">Blog</a></li>
+                                    <li><a href="page-faq.html">FAQ</a></li>
+                                    <li><a href="page-contact.html">Contact</a></li>
+                                    <li><a href="page-booking.html">Booking</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Main Menu End-->
+
+                        <!-- Outer Box -->
+                        <div class="outer-box">
+                            <!-- Btn Box -->
+                            <div class="btn-box"> <a href="page-booking.html" class="theme-btn btn-style-one dark-line-two hover-light"><span class="btn-title">Book a Taxi</span></a> </div>
+
+                            <!-- Mobile Nav toggler -->
+                            <div class="mobile-nav-toggler light"><span class="icon fas fa-bars"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu  -->
+            <div class="mobile-menu">
+                <div class="menu-backdrop"></div>
+
+                <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                <nav class="menu-box">
+                    <div class="upper-box">
+                        <div class="nav-logo"><a href="index.html"><img src="images/logo-2.png" alt="" title=""></a></div>
+                        <div class="close-btn"><i class="icon fa fa-times"></i></div>
+                    </div>
+                    <ul class="navigation clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </ul>
+                    <ul class="contact-list-one light">
+                        <li> <i class="icon fas fa-phone"></i> <span class="title">Call Now</span>
+                            <div class="text"><a href="tel:+17804694222">+1 (780) 469-4222</a></div>
+                        </li>
+                        <li> <i class="icon fas fa-envelope"></i> <span class="title">Send Email</span>
+                            <div class="text"><a href="mailto:info@sherwoodparkcabs.ca">info@sherwoodparkcabs.ca</a></div>
+                        </li>
+                        <li> <i class="icon fas fa-map-marker-alt"></i> <span class="title">Address</span>
+                            <div class="text">1039 Allendale Crescent, Sherwood Park, AB T8H 0P5</div>
+                        </li>
+                    </ul>
+                    <ul class="social-links">
+                        <li><a href="https://x.com/sherwoodtaxi"><i class="fa fa-x"></i></a></li>
+                        <li><a href="https://www.facebook.com/www.sherwoodparkcabs.ca/"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com/sherwoodparkcabs/"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://wa.me/17804694222" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- End Mobile Menu -->
+
+            <!-- Header Search -->
+            <div class="search-popup"> <span class="search-back-drop"></span>
+                <button class="close-search"><span class="fa fa-times"></span></button>
+                <div class="search-inner">
+                    <form method="post" action="blog-showcase.html">
+                        <div class="form-group">
+                            <input type="search" name="search-field" value="" placeholder="Search..." required="">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End Header Search -->
+
+            <!-- Sticky Header  -->
+            <div class="sticky-header">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <!--Logo-->
+                        <div class="logo"> <a href="index.html" title=""><img src="images/logo.png" alt="" title=""></a> </div>
+
+                        <!--Right Col-->
+                        <div class="nav-outer">
+                            <!-- Main Menu -->
+                            <nav class="main-menu">
+                                <div class="navbar-collapse show collapse clearfix">
+                                    <ul class="navigation clearfix">
+                                        <!--Keep This Empty / Menu will come through Javascript-->
+                                    </ul>
+                                </div>
+                            </nav>
+                            <!-- Main Menu End-->
+
+                            <!--Mobile Navigation Toggler-->
+                            <div class="mobile-nav-toggler"><span class="icon fas fa-bars"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Sticky Menu -->
+        </header>
+        <!--End Main Header -->
+
+        <!-- Start main-content -->
+        <section class="page-title" style="background-image: url(images/background/page-title.png);">
+            <div class="auto-container">
+                <div class="title-outer text-center">
+                    <h1 class="title">Blog Details</h1>
+                    <ul class="page-breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="news-grid.html">Blog</a></li>
+                        <li>Blog Details</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- end main-content -->
+
+        <!--Blog Details Start-->
+        <section class="blog-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="blog-details__left">
+                            <div class="blog-details__img">
+                                <img src="images/resource/news-details.jpg" alt="Sherwood Park Cabs Blog">
+                                <div class="blog-details__date">
+                                    <span class="day">15</span>
+                                    <span class="month">Jan</span>
+                                </div>
+                            </div>
+                            <div class="blog-details__content">
+                                <ul class="list-unstyled blog-details__meta">
+                                    <li><a href="news-details.html"><i class="fas fa-user-circle"></i> Sherwood Park Cabs</a> </li>
+                                    <li><a href="news-details.html"><i class="fas fa-comments"></i> 5 Comments</a></li>
+                                    <li><a href="news-details.html"><i class="fas fa-calendar-alt"></i> January 15, 2025</a></li>
+                                </ul>
+                                <h3 class="blog-details__title">Advantages of Online Taxi Booking Services</h3>
+                                <p class="blog-details__text-2">In today's fast-paced world, convenience is king. At Sherwood Park Cabs, we understand that our customers value efficiency and reliability when it comes to transportation. That's why we've embraced modern technology to offer seamless online taxi booking services that put you in control of your journey.</p>
+                                
+                                <p class="blog-details__text-2">Online booking has revolutionized the taxi industry, and we're proud to be at the forefront of this transformation. With just a few clicks on your smartphone or computer, you can book a reliable taxi service that will arrive at your location promptly. Our system provides instant confirmation, transparent pricing, and real-time tracking capabilities.</p>
+                                
+                                <p class="blog-details__text-2">The benefits of our online booking system extend beyond mere convenience. You can schedule rides in advance, perfect for airport transfers or important business meetings. Our flat-rate pricing means no surprises - you'll know exactly what you'll pay before you book. Plus, with multiple payment options including contactless payments, you can choose the method that works best for you.</p>
+                                
+                                <p class="blog-details__text-2">Safety is paramount in everything we do. Our certified drivers undergo thorough background checks, and all vehicles are regularly maintained and sanitized. With GPS tracking and 24/7 customer support, you can travel with peace of mind knowing that Sherwood Park Cabs has your safety covered.</p>
+                                
+                                <p class="blog-details__text-2">Whether you need a quick ride across town, an airport shuttle, or corporate transportation services, our online booking platform makes it easier than ever to access reliable, professional taxi services in Sherwood Park and surrounding areas.</p>
+                            </div>
+                            <div class="blog-details__bottom">
+                                <p class="blog-details__tags"> <span>Tags</span> <a href="news-details.html">Taxi Service</a> <a href="news-details.html">Online Booking</a> <a href="news-details.html">Transportation</a> <a href="news-details.html">Sherwood Park</a> </p>
+                                <div class="blog-details__social-list"> 
+                                    <a href="https://x.com/sherwoodtaxi"><i class="fa fa-x"></i></a> 
+                                    <a href="https://www.facebook.com/www.sherwoodparkcabs.ca/"><i class="fab fa-facebook"></i></a> 
+                                    <a href="https://www.instagram.com/sherwoodparkcabs/"><i class="fab fa-instagram"></i></a> 
+                                    <a href="https://wa.me/17804694222" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                </div>
+                            </div>
+                            <div class="nav-links">
+                                <div class="prev">
+                                    <a href="news-details.html" rel="prev">← Benefits of Flat Rate Taxi Services</a>
+                                </div>
+                                <div class="next">
+                                    <a href="news-details.html" rel="next">Airport Shuttle Services Guide →</a>
+                                </div>
+                            </div>
+                            <div class="comment-one">
+                                <h3 class="comment-one__title">5 Comments</h3>
+                                <div class="comment-one__single">
+                                    <div class="comment-one__image"> <img src="images/resource/testi-2.png" alt="Customer Review"> </div>
+                                    <div class="comment-one__content">
+                                        <h3>Sarah Thompson</h3>
+                                        <p>Great article! I've been using Sherwood Park Cabs' online booking system for months now and it's incredibly convenient. The flat rate pricing gives me peace of mind and the drivers are always professional and punctual.</p>
+                                        <a href="news-details.html" class="theme-btn btn-style-one comment-one__btn"><span class="btn-title">Reply</span></a>
+                                    </div>
+                                </div>
+                                <div class="comment-one__single">
+                                    <div class="comment-one__image"> <img src="images/resource/testi-1.png" alt="Customer Review"> </div>
+                                    <div class="comment-one__content">
+                                        <h3>Mike Johnson</h3>
+                                        <p>As someone who travels frequently for business, I really appreciate the advance booking feature. Being able to schedule my airport rides ahead of time and knowing the exact cost makes my travel planning so much easier.</p>
+                                        <a href="news-details.html" class="theme-btn btn-style-one comment-one__btn"><span class="btn-title">Reply</span></a>
+                                    </div>
+                                </div>
+                                <div class="comment-form">
+                                    <h3 class="comment-form__title">Leave a Comment</h3>
+                                    <form id="contact_form" name="contact_form" class="" action="includes/sendmail.php" method="post">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="mb-3">
+                                                    <input name="form_name" class="form-control" type="text" placeholder="Enter Name" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="mb-3">
+                                                    <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <textarea name="form_message" class="form-control required" rows="5" placeholder="Enter Your Comment" required></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input name="form_botcheck" class="form-control" type="hidden" value="" />
+                                            <button type="submit" class="theme-btn btn-style-one" data-loading-text="Please wait..."><span class="btn-title">Submit Comment</span></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="sidebar">
+                            <div class="sidebar__single sidebar__search">
+                                <form action="#" class="sidebar__search-form">
+                                    <input type="search" placeholder="Search blog posts...">
+                                    <button type="submit"><i class="fas fa-search"></i></button>
+                                </form>
+                            </div>
+                            <div class="sidebar__single sidebar__post">
+                                <h3 class="sidebar__title">Latest Posts</h3>
+                                <ul class="sidebar__post-list list-unstyled">
+                                    <li>
+                                        <div class="sidebar__post-image"> <img src="images/resource/news-1.jpg" alt="Flat Rate Taxi"> </div>
+                                        <div class="sidebar__post-content">
+                                            <h3> <span class="sidebar__post-content-meta"><i class="fas fa-user-circle"></i>Sherwood Park Cabs</span> <a href="news-details.html">Benefits of Flat Rate Taxi Services</a>
+                                            </h3>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="sidebar__post-image"> <img src="images/resource/news-2.jpg" alt="Airport Shuttle"> </div>
+                                        <div class="sidebar__post-content">
+                                            <h3> <span class="sidebar__post-content-meta"><i class="fas fa-user-circle"></i>Sherwood Park Cabs</span> <a href="news-details.html">Airport Shuttle Services Guide</a> </h3>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="sidebar__post-image"> <img src="images/resource/news-3.jpg" alt="COVID Safety"> </div>
+                                        <div class="sidebar__post-content">
+                                            <h3> <span class="sidebar__post-content-meta"><i class="fas fa-user-circle"></i>Sherwood Park Cabs</span> <a href="news-details.html">COVID-19 Safety Measures</a> </h3>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="sidebar__single sidebar__category">
+                                <h3 class="sidebar__title">Categories</h3>
+                                <ul class="sidebar__category-list list-unstyled">
+                                    <li><a href="news-details.html">Taxi Services<span class="icon-right-arrow"></span></a> </li>
+                                    <li class="active"><a href="news-details.html">Online Booking<span class="icon-right-arrow"></span></a></li>
+                                    <li><a href="news-details.html">Safety Guidelines<span class="icon-right-arrow"></span></a> </li>
+                                    <li><a href="news-details.html">Corporate Transportation<span class="icon-right-arrow"></span></a> </li>
+                                    <li><a href="news-details.html">Airport Shuttle<span class="icon-right-arrow"></span></a> </li>
+                                    <li><a href="news-details.html">Travel Tips<span class="icon-right-arrow"></span></a> </li>
+                                </ul>
+                            </div>
+                            <div class="sidebar__single sidebar__tags">
+                                <h3 class="sidebar__title">Popular Tags</h3>
+                                <div class="sidebar__tags-list"> 
+                                    <a href="#">Taxi Service</a> 
+                                    <a href="#">Flat Rate</a> 
+                                    <a href="#">Airport Shuttle</a> 
+                                    <a href="#">24/7 Service</a> 
+                                    <a href="#">Online Booking</a> 
+                                    <a href="#">Safety</a>
+                                    <a href="#">Corporate</a>
+                                    <a href="#">Sherwood Park</a> 
+                                </div>
+                            </div>
+                            <div class="sidebar__single sidebar__comments">
+                                <h3 class="sidebar__title">Recent Comments</h3>
+                                <ul class="sidebar__comments-list list-unstyled">
+                                    <li>
+                                        <div class="sidebar__comments-icon"> <i class="fas fa-comments"></i> </div>
+                                        <div class="sidebar__comments-text-box">
+                                            <p>Sarah Thompson on <br> Online Taxi Booking Benefits</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="sidebar__comments-icon"> <i class="fas fa-comments"></i> </div>
+                                        <div class="sidebar__comments-text-box">
+                                            <p> <span>Mike Johnson</span> on:</p>
+                                            <h5>Airport Shuttle Service</h5>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="sidebar__comments-icon"> <i class="fas fa-comments"></i> </div>
+                                        <div class="sidebar__comments-text-box">
+                                            <p>Lisa Chen on <br> Flat Rate Pricing Advantages</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="sidebar__comments-icon"> <i class="fas fa-comments"></i> </div>
+                                        <div class="sidebar__comments-text-box">
+                                            <p> <span>David Wilson</span> on:</p>
+                                            <h5>COVID Safety Measures</h5>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Blog Details End-->
+
+        <!-- Main Footer -->
+        <footer class="main-footer footer-style-two">
+            <div class="bg bg-pattern-4"></div>
+            <!-- Footer Top -->
+            <div class="footer-top">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <div class="top-left">
+                            <div class="logo-box">
+                                <div class="logo"><a href="index.html"><img src="images/logo-2.png" alt="Sherwood Park Cabs Logo"></a></div>
+                            </div>
+                        </div>
+                        <div class="top-center">
+                            <div class="text">At Sherwood Park cabs, we try to make your journeys experience the most economic flavours and thus our flat rate cabs take care of every limitation of your pocket.</div>
+                        </div>
+                        <div class="top-right">
+                            <div class="info-btn">
+                                <i class="icon fas fa-mobile-alt"></i>
+                                <div class="content">
+                                    <h5 class="title">call for taxi</h5>
+                                    <a href="tel:+17804694222" class="phone-no">+1(780)-469-4222</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Widgets Section -->
+            <div class="widgets-section">
+                <div class="auto-container">
+                    <div class="row">
+
+                        <!-- Footer Column -->
+                        <div class="footer-column col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-widget about-widget">
+                                <h5 class="widget-title">Our Services</h5>
+                                <div class="widget-content">
+                                    <div class="text">Flat Rate Cabs & Taxi, Airport Shuttle, Corporate Taxi, Limousine service, Minibus taxi service, Transportation service, Airport shuttle service, Handicapped transportation service</div>
+                                    <div class="contact-info">
+                                        <div class="info-item">
+                                            <i class="icon fas fa-map-marker-alt"></i>
+                                            <span>1039 Allendale Crescent, Sherwood Park, AB T8H 0P5</span>
+                                        </div>
+                                        <div class="info-item">
+                                            <i class="icon fas fa-phone"></i>
+                                            <span><a href="tel:+17804694222">+1(780)-469-4222</a></span>
+                                        </div>
+                                        <div class="info-item">
+                                            <i class="icon fas fa-envelope"></i>
+                                            <span><a href="mailto:info@sherwoodparkcabs.ca">info@sherwoodparkcabs.ca</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer COlumn -->
+                        <div class="footer-column col-lg-3 col-md-6 col-sm-12">
+                            <div class="footer-widget links-widget">
+                                <h4 class="widget-title">Useful Links</h4>
+                                <div class="widget-content">
+                                    <ul class="user-links two-column">
+                                        <li><i class="icon fa fa-angle-double-right"></i> <a href="page-about.html">About</a></li>
+                                        <li><i class="icon fa fa-angle-double-right"></i> <a href="page-services.html">Services</a></li>
+                                        <li><i class="icon fa fa-angle-double-right"></i> <a href="page-pricing.html">Pricing</a></li>
+                                        <li><i class="icon fa fa-angle-double-right"></i> <a href="page-testimonial.html">Gallery</a></li>
+                                        <li><i class="icon fa fa-angle-double-right"></i> <a href="news-grid.html">Blog</a></li>
+                                        <li><i class="icon fa fa-angle-double-right"></i> <a href="page-contact.html">Contact</a></li>
+                                        <li><i class="icon fa fa-angle-double-right"></i> <a href="page-faq.html">FAQ</a></li>
+                                        <li><i class="icon fa fa-angle-double-right"></i> <a href="page-booking.html">Book Now</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer Column -->
+                        <div class="footer-column col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-widget newsletter-widget">
+                                <h4 class="widget-title">Service Hours</h4>
+                                <div class="widget-content">
+                                    <div class="text">We are available 24/7 for your transportation needs throughout Sherwood Park and surrounding areas.</div>
+                                    <div class="service-features">
+                                        <ul>
+                                            <li><i class="fas fa-clock"></i> 24 Hours Service</li>
+                                            <li><i class="fas fa-calendar-alt"></i> 7 Days a Week</li>
+                                            <li><i class="fas fa-phone"></i> Instant Booking</li>
+                                            <li><i class="fas fa-car"></i> Fleet Available</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="auto-container">
+                    <div class="inner-container">
+                        <div class="copyright-text">© Sherwoodpark Cabs © All Rights Reserved - 2025</div>
+                        <ul class="footer-nav">
+                            <li><a href="https://www.facebook.com/www.sherwoodparkcabs.ca/"><i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li><a href="https://x.com/sherwoodtaxi"><i class="fa fa-x"></i> Twitter</a></li>
+                            <li><a href="https://www.instagram.com/sherwoodparkcabs/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a href="https://wa.me/17804694222" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--End Main Footer -->
+
+    </div>
+    <!-- End Page Wrapper -->
+    
+    <!-- Scroll To Top -->
+    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/17804694222" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            left: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            color: white;
+            text-decoration: none;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                left: 20px;
+                font-size: 25px;
+            }
+        }
+    </style>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/appear.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/splitType.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/script.js"></script>
+    <!-- form submit -->
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.form.min.js"></script>
+    <script>
+        (function($) {
+            $("#contact_form").validate({
+                submitHandler: function(form) {
+                    var form_btn = $(form).find('button[type="submit"]');
+                    var form_result_div = '#form-result';
+                    $(form_result_div).remove();
+                    form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                    var form_btn_old_msg = form_btn.html();
+                    form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                    $(form).ajaxSubmit({
+                        dataType: 'json',
+                        success: function(data) {
+                            if (data.status == 'true') {
+                                $(form).find('.form-control').val('');
+                            }
+                            form_btn.prop('disabled', false).html(form_btn_old_msg);
+                            $(form_result_div).html(data.message).fadeIn('slow');
+                            setTimeout(function() {
+                                $(form_result_div).fadeOut('slow')
+                            }, 6000);
+                        }
+                    });
+                }
+            });
+        })(jQuery);
+    </script>
+</body>
+
+</html>
